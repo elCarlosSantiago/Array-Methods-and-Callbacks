@@ -33,13 +33,12 @@ function getFinals(arr) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i]['Stage'] === "Final") {
             newArr.push(arr[i]);
-            newArr.push(arr[i]);
         }
     }
     return newArr
 }
 
-// console.log('Task2', getFinals(fifaData))
+console.log('Task2', getFinals(fifaData))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function called getYears to do the following: 
@@ -47,10 +46,11 @@ Use the higher-order function called getYears to do the following:
 2. Receive a callback function getFinals from task 2 
 3. Return an array called years containing all of the years in the getFinals data set*/
 
+
 function getYears(arr, callback) {
     const years = [];
-    for (let i = 0; i < arr.length; i++) {
-        years.push(callback(arr)[i]["Final"])
+    for (let i = 0; i < callback(arr).length; i++) {
+        years.push(callback(arr)[i]['Year'])
     }
     return years
 }
